@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --body-bg: #d4d3dd;
+    --font-color: #000;
+    --font-color-hover: #555;
+    --img-container-bg: rgba(255, 255, 255, 0.6);
+
+
+}
+
+.dark-mode:root {
+    --body-bg: #1F1E1F;
+    --font-color: #C5C5C5;
+    --img-container-bg: #1F1E1F;
+
+
+}
+
+body {
+    background: var(--body-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1810px;
+}
+
+h1 {
+    letter-spacing: 3px;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    color: var(--font-color);
+    top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.pokeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1400px;
+
+}
+
+.pokemon {
+
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--img-container-bg);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+
+
+}
+
+.imgContainer img {
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    margin-top: 20px;
+    color: #000;
+}
+
+.number {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 2px 13px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #000;
+}
+
+.name {
+    
+    margin: 15px 0 7px;
+    letter-spacing: 1.5px;
+    inline-size: 120px;
+    overflow-wrap: break-word; 
+    color: #000;
+}
+
+/* dark mode button */
+
+.input-mode-switch {
+    background: transparent;
+    border: transparent;
+    width: 45px;
+    height: 25px;
+}
+
+.wrapper-mode-switch {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 1800px;
+    margin-top: 2em;
+    margin-right: 5em;
+}
+
+.mode-switch {
+    width: 5em;
+    height: 2.22em;
+    border-radius: 10em;
+    background: #fff;
+    border: 2px solid #E3350D;
+    position: absolute;
+    cursor: pointer;
+}
+
+.mode-switch-toggle {
+    position: absolute;
+    border-radius: 50%;
+    top: -8.8px;
+    left: -7px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.mode-switch::before {
+    content: "Light Mode On";
+    color: var(--font-color);
+    position: absolute;
+    display: inline-block;
+    width: 12em;
+    left: -8em;
+    top: 0.4em;
+}
+
+#input-mode-switch:checked ~ label .mode-switch-toggle {
+    transform: translatex(2.42em);
+    height: auto;
+    width: auto;
+}
+
+#input-mode-switch:checked ~ .mode-switch::before {
+    content: "Dark Mode On"
+}
+
+#input-mode-switch {
+    display: none;
+}
+
+
